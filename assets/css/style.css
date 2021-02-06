@@ -12,6 +12,7 @@
 }
 html,body{
     height: 100%;
+
 }
 
 header{
@@ -42,6 +43,7 @@ header .logo{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+    margin-right: 15px;
 }
 
 header .logo a{
@@ -58,7 +60,9 @@ header .nav{
 
 nav li{
     display: inline;
-    padding: 15px 20px;
+    padding: 15px 15px;
+    transition: all 200ms;
+    border-radius: 4px;
 }
 
 nav li:hover{
@@ -76,6 +80,50 @@ nav a{
     font-size: 16px;
 
 }
+
+header .icon-menu{
+    display: none;
+    width: 25px;
+    height: 25px;
+    background-image: url('../menu.png');
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+header .icon-menu:hover{
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+header .removeMenu{
+    display: none;
+    width: 25px;
+    height: 25px;
+    background-image: url('../cancel.png');
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+header .removeMenu:hover{
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+form{
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
 
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -96,23 +144,57 @@ input[type="search"]{
     transition: all 300ms;
 }
 
-form{
-    min-width: 40px;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .icon-buscar{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 48px;
     background-image: url('../search.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 50%;
+    padding: 15px 20px;
+    border-radius: 4px;
 }
 
+.icon-buscar:hover{
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+
+@media screen and (max-width: 550px) {
+    header .logo{
+        width: 125px;
+        height: 100%;
+    }
+}
+
+
+@media screen and (max-width: 855px) {
+
+    header .nav{
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 50%;
+        display: none;
+        background-color: rgb(19, 126, 153);
+        background-color: #202020;
+        border-bottom-left-radius: 10px;
+    }
+    nav li{
+        display: block;
+    }
+
+    header .icon-menu{
+        display: block;
+    }
+
+    header .icon-buscar{
+        position: absolute;
+    }
+
+
+}
 
 
 
