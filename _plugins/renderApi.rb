@@ -72,4 +72,4 @@ module Jekyll
 end
 
   
-Liquid::Template.register_tag('filmeAPI', Jekyll::RenderTimeTag)
+Liquid::Template.register_tag("filmeAPI", Jekyll::RenderTimeTag)
