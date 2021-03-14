@@ -1,0 +1,31 @@
+---
+title: Assista todos os filmes
+layout: default
+---
+
+
+
+<div class="espassamento">Todos os filmes adicionados &darr;</div>
+<section class="post-area">
+  {% for post in paginator.posts %}
+    <div id="post" class="post">
+      <div class="img-categoria" style="background-image: url('{{post.urlImage}}{%filmeAPI {{post.urlPoster}}%}');">
+        <div id="categorias-area" class="categorias-area">
+            <div class="categoria">{{ post.tagInPost }}</div>
+        </div>
+        <div class="icon-play"></div>
+      </div><!--img-categoria-->
+      <p class="post-title"><a id="linkPost" href="{{post.url}}">{{post.title}}</a></p>
+    </div><!--Post-->
+  {% endfor %}
+</section>
+
+<div class="pagination-area">
+  <div class="voltar paginationButtonStyle">{% if paginator.previous_page %}<a href="{{ paginator.previous_page_path }}">Voltar</a>{% endif %}</div>
+  <div class="numberPagina"><span>Página {{ paginator.page }} de {{ paginator.total_pages }}</span></div>
+  <div class="proximo paginationButtonStyle">{% if paginator.next_page %}<a href="{{ paginator.next_page_path }}">Próxima</a>{% endif %}</div>
+</div>
+
+<script>
+  openLink(document.querySelectorAll('#post'), document.querySelectorAll('#linkPost'))
+</script>

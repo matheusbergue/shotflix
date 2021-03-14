@@ -29,8 +29,26 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
-# Exclude from processing.
+
+defaults:
+  # Filmes
+  - scope:
+      path: "_posts/filmes"
+      type: posts
+    values:
+      permalink: /:categories/assistir-:title-online/
+
+
+
+
+
+paginate: 6
+paginate_path: "/filmes/page/:num/"
+
+
+# Exclude from processing. 
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 # exclude:

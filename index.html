@@ -1,0 +1,56 @@
+---
+title: Assista Filmes online gratis
+layout: default
+---
+
+
+
+<script src="/assets/js/posts.js"></script>
+
+
+<section class="slider-area">
+    <div id="slide-container" class="slide-container">
+       <script src="/assets/js/SlideRecomendados.js"></script>
+    </div>
+</section>
+<div class="insta-banner">
+    <a class="banner-insta" target="blank" href="https://www.instagram.com/shotflixtv/"></a>
+    <div class="img"></div>
+    <div class="insta">SHOTFLIXTV</div>
+</div>
+<section class="ultimos-filmes">
+    <div class="anterior-slide" onclick="tradeSlide(ultimosFilmes, 'anterior', 4)"></div>
+    <div class="proximo-slide" onclick="tradeSlide(ultimosFilmes, 'proximo', 4)"></div>
+    <p>ultimos filmes Adicionados ➜</p>
+    <div id="ultimosFilmes" class="scroll-area">
+        {% for post in site.posts limit:15 %}
+            <div id="post" class="post">
+                <div class="img-categoria" style="background-image: url('{{post.urlImage}}{%filmeAPI {{post.urlPoster}}%}');">
+                    <div id="categorias-area" class="categorias-area">
+                        <div class="categoria">{{ post.tagInPost }}</div>
+                    </div><!--categoria-area-->
+                    <div class="icon-play"></div>
+                </div><!--img-categoria-->
+                <p class="post-title"><a id="linkPost" href="{{post.url}}">{{post.title}}</a></p>
+            </div><!--Post-->
+        {% endfor %}
+    </div><!--scroll-area-->
+</section><!--ultimos-filmes-->
+
+<div class="divisao"></div>
+
+<section class="recomendados">
+    <p>filmes recomendados ➜</p>
+    <div id="recomendados" class="scroll-area">
+        <div class="anterior-slide" onclick="tradeSlide(document.getElementById('recomendados'), 'anterior', 4)"></div>
+        <div class="proximo-slide" onclick="tradeSlide(document.getElementById('recomendados'), 'proximo', 4)"></div>
+        <script src="/assets/js/FilmesRecomendados.js"></script>
+    </div>
+
+</section>
+
+<script>
+    openLink(document.querySelectorAll('#post'), document.querySelectorAll('#linkPost'))
+    openLink(document.querySelectorAll('#slidePost'), document.querySelectorAll('#linkSlide'))
+
+</script>
